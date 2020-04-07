@@ -22,4 +22,4 @@ api.add_resource(CreateNewShortUrl, '/api/shorturl/new')
 api.add_resource(GoToUrl, '/api/shorturl/<url_id>')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=5000)
