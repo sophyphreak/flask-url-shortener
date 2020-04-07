@@ -5,15 +5,15 @@ from models.short_url import ShortUrlModel
 
 class CreateNewShortUrl(Resource):
     parser = reqparse.RequestParser()
-    parser.add_argument('URL',
+    parser.add_argument('url',
         type=str,
         required=True,
-        help="URL cannot be empty"
+        help="url cannot be empty"
     )
 
     def post(self):
         data = CreateNewShortUrl.parser.parse_args()
-        submitted_url = data['URL'] 
+        submitted_url = data['url'] 
 
         already_exists = ShortUrlModel.find_by_original_url(submitted_url)
         if already_exists:
