@@ -1,7 +1,6 @@
 from flask import Flask
 from flask_restful import Api
 from db import db
-import re
 import os
 
 from resources.create_new_short_url import CreateNewShortUrl
