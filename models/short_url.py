@@ -1,7 +1,8 @@
 from db import db
 
+
 class ShortUrlModel(db.Model):
-    __tablename__ = 'short_urls'
+    __tablename__ = "short_urls"
     id = db.Column(db.Integer, primary_key=True)
     original_url = db.Column(db.String(80))
 
@@ -9,10 +10,7 @@ class ShortUrlModel(db.Model):
         self.original_url = original_url
 
     def json(self):
-        return {
-            'id': self.id,
-            'original_url': self.original_url
-        }
+        return {"id": self.id, "original_url": self.original_url}
 
     @classmethod
     def find_by_original_url(cls, original_url):
